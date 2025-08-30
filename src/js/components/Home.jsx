@@ -3,15 +3,22 @@ import React from "react";
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
+import Luz from "./Luz.jsx"
 
 
 //create your first component
 const Home = () => {
+
 	return (
 		<div className="text-center">
 			<h1 className="text-center mt-5">holaaaa</h1>
-				<img src={rigoImage} />
-			<input id="input" placeholder="Tiempo en segundos" type="number"></input><br/>
+			<div id="semaforo" className="d-flex align-items-center justify-content-center">
+				<div id="cajaSemaforo" className="row justify-content-center m-0">
+					<Luz id="1" color="red"/>
+					<Luz id="2" color="yellow" onclick="enscendido()"/>
+					<Luz id="3" color="green" onclick="enscendido()"/>
+				</div>
+			</div>
 			<div className="mt-3">
 				<div id="1" className="btn btn-success">
 					hello

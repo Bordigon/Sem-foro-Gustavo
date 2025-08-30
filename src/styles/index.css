@@ -1,7 +1,13 @@
-#reloj {
-    width: 100px
+#cajaSemaforo{
+    width:150px;
+    height:350px;
+    background:grey;
+    border-radius:5%;
 }
-
-.reloj{
-    font-size:100px
+.luz{
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    margin:5px;
+  
 }
