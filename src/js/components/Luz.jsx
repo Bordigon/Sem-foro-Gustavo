@@ -2,32 +2,29 @@ import React, { useState, useEffect } from 'react'
 
 export default function Luz (props){
     const id = parseInt(props.id)
-    const shadow = '0 0 100px 10px rgba(242, 255, 0, 0.884)';
     const color = props.color;
+    const shadow = `0 0 100px 10px ${color}`;
     const inicio = props.inicio
     const [luz,setLuz] = useState(inicio)
+    const [delayDeLuz, setDelayDeLuz] = useState ({
+        1:3,2:2,3:1
+    })
 
-
-    console.log(luz)
+    function ilumination (){
+        if (luz==="apagado"){
+            setLuz("enscendido")}
+        else{
+            setLuz("apagado")}
+    };
 
     useEffect(()=>{
-        const ilumination = ()=>{
-        if (luz==="apagado"){
-            setLuz("enscendido");console.log(luz)}
-        else{
-            setLuz("apagado");console.log(luz)}
-        };
-
         const timer = setInterval(ilumination,3000);
         return()=> clearInterval(timer);
     })
 
-
-
     function enscendido(e){
 		console.log(e.target.id)
-      //  e.target.style.boxShadow = '0 0 100px 10px rgba(242, 255, 0, 0.884)';
-        setLuz("enscendido")
+        ilumination()
     }
 
          /*   if(globalTimer===3)
@@ -40,8 +37,8 @@ export default function Luz (props){
         */
 
         if(luz==="apagado")
-            return (<div className="luz" inicio={luz} id={id} style={{background:color}}  onMouseMove={enscendido}></div>)
+            return (<div className="luz" inicio={luz} id={id} style={{background:color}}  onMouseOver={enscendido} onClick={enscendido}></div>)
         else if(luz==="enscendido")
-            return (<div className="luz" inicio={luz} id={id} style={{background:color, boxShadow:shadow}}  onMouseMove={enscendido}></div>)
+            return (<div className="luz" inicio={luz} id={id} style={{background:color, boxShadow:shadow}}  onMouseOver={enscendido} onClick={enscendido}></div>)
 
 }
