@@ -6,9 +6,6 @@ export default function Luz (props){
     const shadow = `0 0 100px 10px ${color}`;
     const inicio = props.inicio
     const [luz,setLuz] = useState(inicio)
-    const [delayDeLuz, setDelayDeLuz] = useState ({
-        1:3,2:2,3:1
-    })
 
     function ilumination (){
         if (luz==="apagado"){
@@ -26,19 +23,9 @@ export default function Luz (props){
 		console.log(e.target.id)
         ilumination()
     }
-
-         /*   if(globalTimer===3)
-            setGlobalTimer(1)
-        else
-            setGlobalTimer(globalTimer+1)
-        
-         
-        
-        */
-
-        if(luz==="apagado")
-            return (<div className="luz" inicio={luz} id={id} style={{background:color}}  onMouseOver={enscendido} onClick={enscendido}></div>)
-        else if(luz==="enscendido")
-            return (<div className="luz" inicio={luz} id={id} style={{background:color, boxShadow:shadow}}  onMouseOver={enscendido} onClick={enscendido}></div>)
+    if(luz==="apagado")
+        return (<div className="luz" inicio={luz} id={id} style={{background:color}}  onMouseOver={enscendido} onClick={enscendido}></div>)
+    else if(luz==="enscendido")
+        return (<div className="luz" inicio={luz} id={id} style={{background:color, boxShadow:shadow}}  onMouseOver={enscendido} onClick={enscendido}></div>)
 
 }
