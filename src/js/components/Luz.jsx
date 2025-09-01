@@ -13,19 +13,13 @@ export default function Luz (props){
         else{
             setLuz("apagado")}
     };
-
-    useEffect(()=>{
-        const timer = setInterval(ilumination,3000);
-        return()=> clearInterval(timer);
-    })
-
+    
     function enscendido(e){
-		console.log(e.target.id)
         ilumination()
     }
     if(luz==="apagado")
-        return (<div className="luz" inicio={luz} id={id} style={{background:color}}  onMouseOver={enscendido} onClick={enscendido}></div>)
+        return (<div className="luz" inicio={luz} id={id} style={{background:color}}  onClick={enscendido}></div>)
     else if(luz==="enscendido")
-        return (<div className="luz" inicio={luz} id={id} style={{background:color, boxShadow:shadow}}  onMouseOver={enscendido} onClick={enscendido}></div>)
+        return (<div className="luz" inicio={luz} id={id} style={{background:color, boxShadow:shadow}}  onClick={enscendido}></div>)
 
 }
