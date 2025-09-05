@@ -14,9 +14,7 @@ const Home = () => {
 			<h1 className="text-center mt-5">Semáforo</h1>
 			<div id="semaforo" className="d-flex align-items-center justify-content-center">
 				<div id="cajaSemaforo" className="row justify-content-center m-0">
-					<Luz id="1" inicio="apagado" color="red"/>
-					<Luz id="2" inicio="apagado" color="yellow" onclick="enscendido()"/>
-					<Luz id="3" inicio="apagado" color="green" onclick="enscendido()"/>
+					<Luz/>
 				</div>
 			</div>
 			<div className="mt-3">
